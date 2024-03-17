@@ -66,11 +66,7 @@ function Product() {
         </Grid>
         <Grid item xs={12} md={6}>
           {loading && (
-            <Typography
-              variant="h5"
-              component={'h5'}
-              textAlign="center"
-            >
+            <Typography variant="h5" component={'h5'} textAlign="center">
               Loading...
             </Typography>
           )}
@@ -91,10 +87,7 @@ function Product() {
             <SizeSelector
               selectedSize={selectedSize}
               availableSize={product?.sizes || []}
-              onChange={(
-                event: React.MouseEvent<HTMLElement>,
-                newSize: ProductSizes,
-              ) => setSelectedSize(newSize)}
+              onChange={(_, newSize: ProductSizes) => setSelectedSize(newSize)}
             />
             <Typography variant="h4" component={'p'}>
               Descripción
