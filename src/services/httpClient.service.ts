@@ -19,7 +19,7 @@ class httpClientService implements HttpClient {
 
   async put<T>(
     url: string,
-    data: T,
+    data: any,
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const response: AxiosResponse<T> = await this.axiosInstance.put(url, data, {
@@ -30,7 +30,7 @@ class httpClientService implements HttpClient {
 
   async post<T>(
     url: string,
-    data: T,
+    data: any,
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const response: AxiosResponse<T> = await this.axiosInstance.post(
@@ -52,7 +52,7 @@ class httpClientService implements HttpClient {
 
   async patch<T>(
     url: string,
-    data: T,
+    data: any,
     config?: AxiosRequestConfig,
   ): Promise<T> {
     const response: AxiosResponse<T> = await this.axiosInstance.patch(
