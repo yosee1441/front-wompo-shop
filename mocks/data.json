@@ -626,5 +626,18 @@
       "title": "Kids Corp Jacket",
       "gender": "kid"
     }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "productId": "mens_chill_crew_neck_sweatshirt",
+      "cardNumber": "5254133674403564",
+      "name": "Mauricio Flor",
+      "expirationDate": "11/25",
+      "cvv": "123",
+      "documentNumber": "1234567891",
+      "prise": 75,
+      "typeDocument": "CC"
+    }
   ]
 }
