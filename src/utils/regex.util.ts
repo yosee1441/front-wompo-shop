@@ -1,0 +1,11 @@
+export const REGEX_VISA_OR_MASTERCARD = /^(4|5[1-5])\d{12,15}$/
+export const REGEX_EXPIRATION_DATE = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/
+export const REGEX_CVV = /^\d{3}$/
+export const REGEX_IS_VISA =/^4/
+export const REGEX_IS_MASTERCARD = /^5[1-5]/
+export const REGEX_ONLY_NUMBERS = /^[0-9]+$/
+export const REGEX_NOT_NUMBERS = /[^\d]/g
+export const REGEX_SPACE_EVERY_FOUR_CHAR = /(.{4})/g
+export const REGEX_REMOVE_SPACES = /\s/g
+export const REGEX_DIVIDE_BY_TWO = /.{1,2}/g
+export const REGEX_FORMAT_MM_YY = /^[0-9]{2}\/[0-9]{2}$/
