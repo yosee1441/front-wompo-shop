@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { AmountFormat } from '@/components/AmountFormat'
+import { CardMediaCustom } from './components'
 
 interface ProductCardProps {
   slug: string
@@ -23,8 +23,8 @@ function ProductCard({
 }: ProductCardProps) {
   return (
     <Card>
-      <Link to={`/product/${slug}`}>
-        <CardMedia
+      <Link to={`/producto/${slug}`}>
+        <CardMediaCustom
           component="img"
           alt={title}
           height="450"
@@ -33,7 +33,7 @@ function ProductCard({
         />
       </Link>
       <CardContent>
-        <Link to={`/product/${slug}`}>
+        <Link to={`/producto/${slug}`}>
           <Typography
             variant="body2"
             component={'p'}
