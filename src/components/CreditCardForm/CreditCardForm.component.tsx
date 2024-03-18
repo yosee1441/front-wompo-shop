@@ -70,6 +70,11 @@ function CreditCardForm({ productId, open, onClose }: CreditCardFormProps) {
     },
   })
 
+  const handleClose = () => {
+    onClose()
+    formik.resetForm()
+  }
+
   const components = () => ({
     [CardTypeName.VISA]: <Visa />,
     [CardTypeName.MASTERCARD]: <Mastercard />,
@@ -78,7 +83,7 @@ function CreditCardForm({ productId, open, onClose }: CreditCardFormProps) {
   return (
     <Dialog
       open={open}
-      onClose={onClose}
+      onClose={handleClose}
       PaperProps={{
         component: 'form',
         onSubmit: formik.handleSubmit,
@@ -92,7 +97,6 @@ function CreditCardForm({ productId, open, onClose }: CreditCardFormProps) {
         <NumberFormatBase
           format={(value: string) => formatCreditCardNumber(value)}
           customInput={TextField}
-          autoFocus
           margin="dense"
           id="cardNumber"
           name="cardNumber"
@@ -122,6 +126,7 @@ function CreditCardForm({ productId, open, onClose }: CreditCardFormProps) {
           fullWidth
           value={formik.values.name}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           error={formik.touched.name && Boolean(formik.errors.name)}
           helperText={formik.touched.name && formik.errors.name}
         />
@@ -215,7 +220,7 @@ function CreditCardForm({ productId, open, onClose }: CreditCardFormProps) {
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} color="primary">
+        <Button onClick={handleClose} color="primary">
           Cancelar
         </Button>
         <Button

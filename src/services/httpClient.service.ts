@@ -1,12 +1,17 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { HttpClient } from '@/models/httpClient.model'
+import { VITE_API_URL } from '@/env'
 
 class httpClientService implements HttpClient {
   private readonly axiosInstance: AxiosInstance
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: `${import.meta.env.VITE_API_URL}api`,
+      baseURL: `${VITE_API_URL}api`,
+      timeout: 10000,
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
   }
 
