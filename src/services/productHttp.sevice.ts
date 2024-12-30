@@ -1,20 +1,18 @@
-import HttpClient from '@/services/httpClient.service'
+import Http from '@/services/http.service'
+import { HttpResponse } from '@/models/httpResponse.model'
 import { Product } from '@/models/product.model'
+import { Pagination } from '@/models/pagination.model'
 
 class ProductHttpService {
-  private http: HttpClient
+  private http: Http
 
   constructor() {
-    this.http = new HttpClient()
+    this.http = new Http()
   }
 
-  async findAll(): Promise<Product[]> {
-    const response = await this.http.get<Product[]>('product')
-    return response
-  }
-
-  async findOne(slug: Product['slug']): Promise<Product> {
-    const response = await this.http.get<Product>(`product/${slug}`)
+  async findAll(): Promise<HttpResponse<Pagination<Product[]>>> {
+    const response =
+      await this.http.get<HttpResponse<Pagination<Product[]>>>('product')
     return response
   }
 }

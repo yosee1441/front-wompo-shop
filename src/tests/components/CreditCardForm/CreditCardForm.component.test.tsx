@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import * as redux from 'react-redux'
-import { CreditCardForm } from '@/components/CreditCardForm'
+import { CreditCardForm } from '@/modules/order/components/CreditCardForm'
 import { mocks } from '../../mocks/data.mock'
 
 // Creamos un mock de snackbarUtilities

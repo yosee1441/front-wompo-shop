@@ -1,16 +1,44 @@
-export type ProductSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'
-export type ProductTypes = 'shirts' | 'pants' | 'hoodies' | 'hats'
-export type ProductGenders = 'men' | 'women' | 'kid' | 'unisex'
-
 export interface Product {
-  slug: string
-  description: string
-  images: string[]
-  inStock: number
-  price: number
-  sizes: ProductSizes[]
-  tags: string[]
+  id: number
   title: string
-  type: ProductTypes
-  gender: ProductGenders
+  description: string
+  price: number
+  discount: number
+  iva: number
+  slug: string
+  type: string
+  gender: string
+  createdAt: string
+  updatedAt: string
+  images: Image[]
+  sizes: Size[]
+  tags: Size[]
+  stocks: Stock[]
+  availableStock: number
+  availableSize: number
+}
+
+interface Stock {
+  id: number
+  availableQuantity: number
+  size: Size
+  warehouse: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Size {
+  id: number
+  stockQuantity: number
+  name: string
+  stocks: Stock[]
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Image {
+  id: number
+  url: string
+  createdAt: string
+  updatedAt: string
 }

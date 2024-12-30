@@ -4,7 +4,7 @@ import { ProductCard } from '@/components/ProductCard'
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  Link: jest.fn(({ children }) => <a href="/producto/product-slug">{children}</a>),
+  Link: jest.fn(({ children }) => <a href="/orden/product-slug">{children}</a>),
 }))
 
 describe('Testing inProductCard Component', () => {
@@ -50,7 +50,7 @@ describe('Testing inProductCard Component', () => {
 
   it('Links should point to the correct path', () => {
     document.querySelectorAll('a').forEach((link) => {
-      expect(link).toHaveAttribute('href', `/producto/product-slug`)
+      expect(link).toHaveAttribute('href', `/orden/product-slug`)
     })
   })
 })

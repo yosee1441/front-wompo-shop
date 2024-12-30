@@ -5,9 +5,9 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { Navbar } from '@/components/Navbar'
 
 const HomePage = lazy(() => import('@/pages/Home/Home.page'))
-const ProductPage = lazy(() => import('@/pages/Product/Product.page'))
-const PurchasePage = lazy(() => import('@/pages/Purchase/Purchase.page'))
+const OrderPage = lazy(() => import('@/pages/Order/Order.page'))
 const NotFoundPage = lazy(() => import('@/pages/NotFound/NotFound.page'))
+const OrderItemPage = lazy(() => import('@/pages/OrderItem/OrderItem.page'))
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/producto/:slug" element={<ProductPage />} />
-          <Route path="/compra/:id" element={<PurchasePage />} />
+          <Route path="/orden/:slug" element={<OrderPage />} />
+          <Route path="/orden-item/:id" element={<OrderItemPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

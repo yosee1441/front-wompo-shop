@@ -10,8 +10,11 @@ $ npm install
 
 ## Running the app
 ```bash
-# development
-$ npm run start:proxy:mock:server
+# develop
+$ npm run start
+
+# production
+$ npm run build
 ```
 
 ## Test

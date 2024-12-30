@@ -10,7 +10,7 @@ interface ProductCardProps {
   slug: string
   title: string
   price: number
-  images: string[]
+  image: string
   description: string
 }
 
@@ -18,22 +18,20 @@ function ProductCard({
   slug,
   title,
   price,
-  images,
+  image,
   description,
 }: ProductCardProps) {
   return (
-    <Card>
-      <Link to={`/producto/${slug}`}>
+    <Link to={`/orden/${slug}`}>
+      <Card>
         <CardMediaCustom
           component="img"
           alt={title}
           height="450"
-          image={`products/${images[0]}`}
+          image={`products/${image}`}
           loading="lazy"
         />
-      </Link>
-      <CardContent>
-        <Link to={`/producto/${slug}`}>
+        <CardContent>
           <Typography
             variant="body2"
             component={'p'}
@@ -49,19 +47,19 @@ function ProductCard({
           >
             {description}
           </Typography>
-        </Link>
-        <AmountFormat
-          value={price}
-          decimalScale={2}
-          renderText={(value) => (
-            <Typography variant={'h5'} component={'span'} paddingTop={2}>
-              {'$ '}
-              {value}
-            </Typography>
-          )}
-        />
-      </CardContent>
-    </Card>
+          <AmountFormat
+            value={price}
+            decimalScale={2}
+            renderText={(value) => (
+              <Typography variant={'h5'} component={'span'} paddingTop={2}>
+                {'$ '}
+                {value}
+              </Typography>
+            )}
+          />
+        </CardContent>
+      </Card>
+    </Link>
   )
 }
 

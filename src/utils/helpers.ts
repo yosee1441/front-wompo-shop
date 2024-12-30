@@ -8,6 +8,10 @@ import {
   REGEX_DIVIDE_BY_TWO,
 } from '@/utils/regex.util'
 
+export function isInRange(value: number, min: number, max: number): boolean {
+  return value >= min && value <= max
+}
+
 export const findOneCardType = (cardNumber: string): string => {
   if (REGEX_IS_VISA.test(cardNumber)) {
     return CardTypeName.VISA

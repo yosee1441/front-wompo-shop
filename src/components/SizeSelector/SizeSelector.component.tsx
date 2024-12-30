@@ -1,13 +1,10 @@
-import type { ProductSizes } from '@/models/product.model'
+import type { Size } from '@/models/product.model'
 import { Typography, ToggleButtonGroup, ToggleButton } from '@mui/material'
 
 interface SizeSerlectorProps {
-  selectedSize: ProductSizes
-  availableSize: ProductSizes[]
-  onChange: (
-    event: React.MouseEvent<HTMLElement>,
-    newSize: ProductSizes,
-  ) => void
+  selectedSize: number
+  availableSize: Size[]
+  onChange: (event: React.MouseEvent<HTMLElement>, newSize: Size) => void
 }
 
 function SizeSerlector({
@@ -28,8 +25,8 @@ function SizeSerlector({
         aria-label="Platform"
       >
         {availableSize.map((size) => (
-          <ToggleButton key={size} value={size}>
-            {size}
+          <ToggleButton key={size.id} value={size.id} disabled={size.stockQuantity === 0}>
+            {size.name}
           </ToggleButton>
         ))}
       </ToggleButtonGroup>

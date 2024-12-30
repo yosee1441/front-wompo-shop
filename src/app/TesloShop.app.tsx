@@ -5,7 +5,7 @@ import { tesloShopTheme } from '@/styles/theme.style'
 import AppRouter from '@/routers/app.router'
 import { SnackbarProvider } from 'notistack'
 import { SnackbarUtilitiesConfigurator } from '@/utils/snackbarManager'
-import store from '@/redux/store'
+import { store } from '@/redux/store'
 
 function TesloShopApp() {
   return (

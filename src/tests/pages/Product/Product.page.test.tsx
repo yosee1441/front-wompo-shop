@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import * as redux from 'react-redux'
-import { Product } from '@/pages/Product'
+import { Product } from '@/pages/Order'
 import { mocks } from '../../mocks/data.mock'
 
 jest.mock('@/redux/actions/product.action', () => ({
