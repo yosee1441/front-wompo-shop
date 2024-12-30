@@ -193,10 +193,9 @@ function OrderModule() {
               Medios de pago
             </Typography>
             <Button
-              startIcon={<CreditCardIcon />}
               variant="outlined"
               onClick={handleClickOpen}
-              startIcon={loading ? <CircularProgress size={24} /> : null}
+              startIcon={loading ? <CircularProgress size={24} /> : <CreditCardIcon />}
               disabled={loading || formik.isValidating || !formik.isValid}
             >
               Pagar con tarjeta de crédito
