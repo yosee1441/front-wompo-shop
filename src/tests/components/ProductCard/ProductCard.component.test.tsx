@@ -21,7 +21,7 @@ describe('Testing inProductCard Component', () => {
           slug={slug}
           title={title}
           price={price}
-          images={images}
+          image={images[0]}
           description={description}
         />
       </BrowserRouter>,
